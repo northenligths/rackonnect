@@ -1,6 +1,6 @@
 import React from "react";
 import { useStateValue } from "../../StateProvider";
-
+import "./product.css";
 function Product({ id, title, image, price, rating }) {
   const [state, dispatch] = useStateValue();
 
@@ -32,7 +32,9 @@ function Product({ id, title, image, price, rating }) {
             ))}
         </div>
       </div>
+
       <img src={image} alt="" />
+
       <button onClick={addToBasket}>Add to Basket</button>
     </div>
   );

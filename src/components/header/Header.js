@@ -3,7 +3,6 @@ import {
   Navbar,
   NavbarBrand,
   NavItem,
-  NavbarToggler,
   Nav,
   NavLink,
   Collapse,
@@ -12,8 +11,10 @@ import {
   Button,
 } from "reactstrap";
 import "./header.css";
+import { useStateValue } from "../../StateProvider";
 
 export default function Header() {
+  const [{ basket }, dispatch] = useStateValue();
   return (
     <div>
       <Navbar color="dark" dark expand="md">
@@ -25,7 +26,7 @@ export default function Header() {
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/reactstrap/reactstrap">
-                Checkout (2)
+                Checkout ({basket.length})
               </NavLink>
             </NavItem>
           </Nav>
