@@ -12,6 +12,8 @@ import {
 } from "reactstrap";
 import "./header.css";
 import { useStateValue } from "../../StateProvider";
+import { Link } from "react-router-dom";
+import "./header.css";
 
 export default function Header() {
   const [{ basket }, dispatch] = useStateValue();
@@ -24,10 +26,10 @@ export default function Header() {
             <NavItem>
               <NavLink href="/">Inventory</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
+            <NavItem className="header-linkItem">
+              <Link className="header-link" to="/checkout">
                 Checkout ({basket.length})
-              </NavLink>
+              </Link>
             </NavItem>
           </Nav>
           <NavbarText className="header-search">
